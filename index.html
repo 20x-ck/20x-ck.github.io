@@ -36,16 +36,23 @@
     <script>
 
         function button1() {
-            const appointmentEvent = new Event("AppointmentBooked");
 
-            document.addEventListener("AppointmentBooked", () => {
-                console.log("The AppointmentBooked event was triggered")
-            });
+            const myEvent = new Event("AppointmentBooked", {
+                bubbles: true,
+            cancelable: true,
+            composed: true
+           })
 
-            document.dispatchEvent(appointmentEvent);
+            document.addEventListener("AppointmentBooked", e => {
+                
+                console.log(e)
+            })
+
+            document.dispatchEvent(myEvent)
+
         };
 
     </script>
-    
+
 </body>
 </html>
