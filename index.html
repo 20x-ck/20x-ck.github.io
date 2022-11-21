@@ -36,24 +36,16 @@
     <script>
 
         function button1() {
-            console.log('Clicked 1');
-
-            let event = new Event("AppointmentBooked");
-            buttonId.dispatchEvent(event);
-            console.log("AppointmentBooked");
-        };
-
-                    // To assign event
             const appointmentEvent = new Event("AppointmentBooked");
 
-            // To trigger the event Listener
             document.addEventListener("AppointmentBooked", () => {
                 console.log("The AppointmentBooked event was triggered")
             });
 
-            // To trigger the Event
             document.dispatchEvent(appointmentEvent);
+        };
 
     </script>
+    
 </body>
 </html>
