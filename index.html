@@ -37,19 +37,27 @@
 
         function button1() {
 
-            const myEvent = new Event("AppointmentBooked", {
-                bubbles: true,
-            cancelable: true,
-            composed: true
-           })
+            window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'AppointmentBooked',
+                    category: 'scheduler',
+                    action: 'AppointmentBooked',
+            });
 
-            document.addEventListener("AppointmentBooked", e => {
-                
-                console.log(e)
-            })
+        //     const myEvent = new Event("AppointmentBooked", {
+        //         bubbles: true,
+        //         cancelable: true,
+        //         composed: true,
+        //         event: 'AppointmentBooked',
+        //         category: 'scheduler',
+        //         action: 'AppointmentBooked',
+        //    })
 
-            document.dispatchEvent(myEvent)
+        //     document.addEventListener("AppointmentBooked", e => {
+        //         console.log(e)
+        //     })
 
+        //     document.dispatchEvent(myEvent)
         };
 
     </script>
